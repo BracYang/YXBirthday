@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8e1e7"/>
+  <text x="400" y="300" font-family="Arial" font-size="24" text-anchor="middle" fill="#e83e8c">这里放你们的第一张合照</text>
+  <text x="400" y="340" font-family="Arial" font-size="18" text-anchor="middle" fill="#666">（请替换为真实照片）</text>
+  <path d="M400,200 C430,180 470,180 500,200 C530,220 550,260 500,300 C490,310 450,350 400,400 C350,350 310,310 300,300 C250,260 270,220 300,200 C330,180 370,180 400,200 Z" fill="#e83e8c" opacity="0.6"/>
+</svg>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f1e1f8"/>
+  <text x="400" y="300" font-family="Arial" font-size="24" text-anchor="middle" fill="#e83e8c">共度的难忘时刻</text>
+  <text x="400" y="340" font-family="Arial" font-size="18" text-anchor="middle" fill="#666">（请替换为真实照片）</text>
+  <rect x="300" y="150" width="200" height="100" rx="20" fill="#e83e8c" opacity="0.3"/>
+  <rect x="350" y="200" width="200" height="100" rx="20" fill="#e83e8c" opacity="0.5"/>
+</svg>

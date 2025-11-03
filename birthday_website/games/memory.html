@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆配对游戏 - 生日挑战</title>
+    <link rel="stylesheet" href="../css/style.css?v=7">
+    <link rel="stylesheet" href="../css/games.css?v=7">
+    <link rel="stylesheet" href="../css/memory.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container game-container">
+        <header>
+            <h1 class="title">记忆配对游戏</h1>
+            <p class="subtitle">找到所有配对的卡片，考验你的记忆力！</p>
+            <a href="../games.html" class="back-btn"><i class="fas fa-arrow-left"></i> 返回游戏列表</a>
+        </header>
+
+        <div class="game-info">
+            <div class="timer">时间: <span id="timer">60</span>秒</div>
+            <div class="moves">步数: <span id="moves">0</span></div>
+        </div>
+
+        <div class="memory-game" id="memory-game">
+            <!-- 卡片将通过JavaScript动态添加 -->
+        </div>
+
+        <div class="game-controls">
+            <button id="start-game" class="game-btn">开始游戏</button>
+            <button id="restart-game" class="game-btn hidden">重新开始</button>
+        </div>
+
+        <!-- 游戏结果弹窗 -->
+        <div class="modal" id="result-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="result-title">游戏结束</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="result-message"></p>
+                    <div class="prize-display hidden" id="prize-display">
+                        <h3>恭喜获得奖品！</h3>
+                        <div class="prize-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <p>生日蛋糕</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="play-again" class="game-btn">再玩一次</button>
+                    <a href="../games.html" class="game-btn">返回游戏列表</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>爱你呦</p>
+        </footer>
+    </div>
+
+    <script src="../js/achievements.js?v=7"></script>
+    <script src="../js/memory.js?v=7"></script>
+</body>
+</html>

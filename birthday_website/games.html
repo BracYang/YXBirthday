@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日游戏挑战 - 赢取惊喜</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container games-container">
+        <header>
+            <h1 class="title">生日游戏挑战</h1>
+            <p class="subtitle">完成所有游戏，收集奖品，获得惊喜！</p>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> 返回主页</a>
+        </header>
+
+        <section class="game-selection">
+            <div class="prizes-display">
+                <h3>已获得的奖品</h3>
+                <div class="prizes-container" id="prizes-container">
+                    <!-- 奖品将通过JavaScript动态添加 -->
+                    <div class="prize-placeholder" data-game="memory"><i class="fas fa-question"></i></div>
+                </div>
+            </div>
+
+            <div class="games-grid">
+                <div class="game-card" data-game="memory">
+                    <div class="game-icon">🧠</div>
+                    <h3>记忆配对</h3>
+                    <p>测试你的记忆力，找出相同的卡片</p>
+                    <div class="game-status" id="memory-status">未完成</div>
+                    <a href="games/memory.html" class="play-btn">开始游戏</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-prize hidden" id="final-prize-section">
+            <h2>恭喜你完成所有挑战！</h2>
+            <div class="final-prize-content">
+                <div class="final-prize-icon"><i class="fas fa-gift"></i></div>
+                <p>你已经收集了所有奖品，点击下方按钮领取最终惊喜！</p>
+                <a href="surprise.html" class="surprise-btn">领取惊喜</a>
+            </div>
+        </section>
+
+        <!-- <footer>
+            <p>用❤️制作 | 生日快乐</p>
+        </footer> -->
+    </div>
+
+    <script src="config.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/games.js"></script>
+    <script>
+        // 检查游戏完成状态
+        function updateGameStatus() {
+            const games = ['memory'];
+            const statusMap = {
+                'memory': 'memoryGameCompleted'
+            };
+            
+            games.forEach(game => {
+                const statusElement = document.getElementById(`${game}-status`);
+                const gameCard = document.querySelector(`[data-game="${game}"]`);
+                
+                if (statusElement && gameCard) {
+                    if (localStorage.getItem(statusMap[game]) === 'true') {
+                        statusElement.textContent = '已完成';
+                        statusElement.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                        gameCard.classList.add('completed');
+                    } else {
+                        statusElement.textContent = '未完成';
+                        statusElement.style.background = 'linear-gradient(135deg, #6c757d, #495057)';
+                    }
+                }
+            });
+            
+            // 计算总体进度
+            const completedGames = games.filter(game => localStorage.getItem(statusMap[game]) === 'true').length;
+            const totalGames = games.length;
+            const progress = Math.round((completedGames / totalGames) * 100);
+            
+            // 更新进度显示
+            const progressElement = document.querySelector('.progress-info');
+            if (progressElement) {
+                progressElement.textContent = `游戏进度: ${completedGames}/${totalGames} (${progress}%)`;
+            }
+        }
+        
+        // 页面加载时更新状态
+        document.addEventListener('DOMContentLoaded', function() {
+            updateGameStatus();
+            
+            // 添加进度信息
+            const header = document.querySelector('header');
+            const progressInfo = document.createElement('div');
+            progressInfo.className = 'progress-info';
+            progressInfo.style.cssText = `
+                background: linear-gradient(135deg, #17a2b8, #138496);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                margin-top: 15px;
+                font-weight: bold;
+                text-align: center;
+            `;
+            header.appendChild(progressInfo);
+            
+            updateGameStatus(); // 再次调用以更新进度信息
+        });
+    </script>
+</body>
+</html>

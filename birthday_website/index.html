@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐！</title>
+    <link rel="stylesheet" href="css/style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title" id="site-title">生日快乐，亲爱的！</h1>
+            <p class="subtitle" id="site-subtitle">愿你的每一天都如这个特别的日子一样美好</p>
+        </header>
+
+        <!-- <section class="photo-gallery">
+            <h2>我们的美好回忆</h2>
+            <div class="gallery-container">
+                <div class="slideshow-container">
+                  
+                </div>
+                <button class="prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section> -->
+
+        <section class="message">
+            <h2>嘿宝贝</h2>
+            <div class="message-content" id="message-content">
+                <!-- 留言内容将通过JavaScript动态添加 -->
+            </div>
+        </section>
+
+        <section class="photo-wall">
+            <h2>看呐</h2>
+            <div class="photo-grid">
+                <!-- 照片墙内容将通过JavaScript动态添加 -->
+            </div>
+            
+            <!-- 照片墙模态框 -->
+            <div id="photo-modal" class="photo-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <img src="" alt="">
+                    <div class="photo-story">
+                        <h3></h3>
+                        <p class="photo-date"></p>
+                        <p class="photo-description"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <p id="footer-text">用❤️制作 | 生日快乐</p>
+            <div class="music-control">
+                <button id="music-toggle" onclick="toggleMusic()">
+                    <i class="fas fa-music"></i> 背景音乐
+                </button>
+                <audio id="background-music" loop>
+                    <!-- 音乐文件将通过JavaScript动态设置 -->
+                    <source src="#" type="audio/mp3">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div>
+            <div class="reset-control">
+                <button id="reset-progress" onclick="resetAllProgress()">
+                    <i class="fas fa-undo"></i> 重置进度
+                </button>
+            </div>
+            <div class="games-link">
+                <a href="games.html" class="games-btn">
+                    <i class="fas fa-gamepad"></i> 生日游戏挑战
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 粒子动画背景 -->
+    <div id="particles-js"></div>
+
+    <!-- 罗小黑静态宠物 -->
+    <div class="pet-container">
+        <img src="images/new_luoxiaohei.png" alt="罗小黑" class="pet-image">
+    </div>
+
+    <script src="config.js?v=7"></script>
+    <script src="js/achievements.js?v=8"></script>
+    <script src="js/script.js?v=8"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>

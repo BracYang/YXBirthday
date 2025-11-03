@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>最终惊喜 - 生日快乐</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/games.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .surprise-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 40px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .surprise-icon {
+            font-size: 4rem;
+            color: #e83e8c;
+            margin-bottom: 20px;
+        }
+        .surprise-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #e83e8c;
+        }
+        .surprise-text {
+            font-size: 1.1rem;
+            margin: 10px 0 20px;
+            line-height: 1.8;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 30px;
+            padding: 12px 20px;
+            border: 2px solid #e83e8c;
+            color: #e83e8c;
+            background: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all .25s ease;
+        }
+        .btn:hover { background: #e83e8c; color: #fff; }
+        .confetti { position: fixed; inset: 0; pointer-events: none; }
+        .confetti span {
+            position: absolute; width: 10px; height: 10px; border-radius: 2px;
+            opacity: .9; animation: fall 3.5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="surprise-container">
+        <div class="surprise-icon"><i class="fas fa-gift"></i></div>
+        <h1 class="surprise-title">恭喜你！最终惊喜已解锁 🎉</h1>
+        <p class="surprise-text">
+            你成功完成了所有生日小游戏，收集了全部奖品！这份用心准备的惊喜，
+            代表我对你的祝福与爱。愿你今天、以及未来每一天都快乐、自由、闪闪发光！
+        </p>
+        <div class="btn-group">
+            <a class="btn" href="index.html"><i class="fas fa-home"></i> 返回主页</a>
+            <a class="btn" href="games.html"><i class="fas fa-gamepad"></i> 回到游戏列表</a>
+        </div>
+    </div>
+
+    <div class="confetti" id="confetti"></div>
+    <script>
+        // 简易彩带效果
+        const colors = ['#e83e8c', '#ffd166', '#06d6a0', '#118ab2', '#ef476f'];
+        const confetti = document.getElementById('confetti');
+        for (let i = 0; i < 120; i++) {
+            const piece = document.createElement('span');
+            piece.style.left = Math.random() * 100 + 'vw';
+            piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+            piece.style.animationDelay = (Math.random() * 2) + 's';
+            piece.style.transform = `translateY(-100vh) rotate(${Math.random() * 360}deg)`;
+            confetti.appendChild(piece);
+        }
+    </script>
+</body>
+</html>
